@@ -64,9 +64,7 @@ body {
   box-sizing: border-box;
   color: #f9c345;
 }
-.factorial__input:hover {
-  animation: rotateX 400ms cubic-bezier(.47,1.64,.41,.8);
-}
+
 
 .factorial__button {
   display: flex;
@@ -92,7 +90,8 @@ body {
 .factorial__result {
   margin-top: 20px;
   width: 250px;
-  height: 80px;
+  min-height: 80px;
+  height: max-content;
   border-radius: 22px;
   font-size: 18px;
   font-weight: 200;
@@ -103,9 +102,7 @@ body {
   color: #4ef945;
   box-sizing: border-box;
 }
-.factorial__result:hover {
-  animation: rotateX 400ms cubic-bezier(.47,1.64,.41,.8);
-}
+
 
 @font-face {
   font-weight: 400; 
