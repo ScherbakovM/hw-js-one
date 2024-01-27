@@ -1,6 +1,10 @@
+//Первое задание
+
 const arr = [1, 5, 7, 9];
 document.querySelector('.min__arr').innerText = `{${arr}}`;
 document.querySelector('.min__digit').innerText = `${Math.min(...arr)}`;
+
+//Второе задание
 
 function createCounter() {
   let counter = 0;
@@ -33,6 +37,8 @@ document.querySelector('.counter__plus').addEventListener('click', () => {
   document.querySelector('.counter__current').innerText = counter1.increment();
 });
 
+//Третье задание
+
 function factorial() {
   let n = document.getElementById("number").value;
   if (n < 0 || n % 1 != 0) {
@@ -50,4 +56,26 @@ function factorial() {
   }
 }
 
+//Четвертое задание
+
+let root = document.documentElement;
+let element = findElementByClass(root, "factorial");
+console.log(element);
+
+function findElementByClass(root, className) {
+  if (!root) {
+    return null;
+  }
+  if (root.classList.contains(className)) {
+    return root;
+  }
+  let children = root.children;
+  for (let i = 0; i < children.length; i++) {
+    let result = findElementByClass(children[i], className);
+    if (result) {
+      return result;
+    }
+  }
+  return null;
+}
 

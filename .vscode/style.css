@@ -8,7 +8,7 @@ body {
   font-family: Furore;
   text-align: center;
   flex-direction: column;
-  font-size: 28px;
+  font-size: clamp(16px, 2.5vw, 28px);
   background-image: url('./nnnoise.svg');
   background-position: center;
   background-size: cover;
@@ -79,12 +79,11 @@ body {
   color: #4ef945;
   box-sizing: border-box;
   cursor: pointer;
-  transition:  2000ms cubic-bezier(.47,1.64,.41,.8);
   will-change: transform;
 }
 
 .factorial__button:hover {
-  animation: rotateX 2000ms;
+  animation: rotateX 400ms cubic-bezier(.47,1.64,.41,.8);
 }
 
 .factorial__result {
@@ -111,12 +110,13 @@ body {
 
 @keyframes rotateX {
   0%  {
-    color: transparent;
-    transform : rotateX(0deg);
+    transform: scale(1);
   } 
+  50% {
+    transform: scale(1.3);
+  }
 
   100%  {
-    color: #4ef945;
-    transform : rotateX(360deg);
+    transform: scale(1);
   } 
 }
