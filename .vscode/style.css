@@ -81,9 +81,12 @@ body {
   box-sizing: border-box;
   cursor: pointer;
   will-change: transform;
+  transition: 0.3s ease all;
 }
 
 .factorial__button:hover {
+  color: #ffffff;
+  background-color: #4ef945;
   animation: rotateX 400ms cubic-bezier(.47,1.64,.41,.8);
 }
 
