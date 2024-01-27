@@ -49,10 +49,16 @@ function factorial() {
   }
   else {
     let fact = 1;
+    const MAX_VALUE = Number.MAX_VALUE;
     for (let i = 1; i <= n; i++) {
       fact *= i;
     }
-    document.querySelector(".factorial__result").innerHTML = "Факториал " + n + " равен " + fact + ".";
+    if (!isFinite(fact)) {
+      document.querySelector(".factorial__result").innerHTML = "Ошибка!  (⁄ ⁄•⁄ω⁄•⁄ ⁄) Число слишком большое для вычисления факториала.";
+    }
+    else {
+      document.querySelector(".factorial__result").innerHTML = "Факториал " + n + " равен " + fact + ".";
+    }
   }
 }
 
